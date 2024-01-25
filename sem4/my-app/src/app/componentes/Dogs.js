@@ -2,20 +2,24 @@
 import image from "next/image";
 import React, {  useState ,useEffect } from 'react';
 import styles from './Dogs.module.css';
-
 function Dogs(){
     const [dog,setDog]= useState();
-    const url = "https://dog.ceo/api/breed/rottweiler/images/random";
+    const [estado,setEstado]=useState();
+    const [habilidad,setHabilidad]=useState();
+    const url = "https://pokeapi.co/api/v2/pokemon/abra";
     useEffect (()=>{   
         fetch (url)
         .then(res => res.json())
-        .then(data=>{setDog(data.message)})
+        .then(data=>{setDog(data.sprites.front_default)
+        .setEstado(data.species.name)
+        .setHabilidad(data.ability.name)    
+    })
     },[])
 
         return (
             <div  className={styles.box}>
-                <h1>DOGS</h1>
-                <img src='dog' alt='dog'  className={styles.image} width={500} height={500}/>
+                <h1 src={estado} alt="estado" />
+                <img src={dog} alt="dog"  className={styles.dog} width={500} height={500}/>
             </div>
 
         );
