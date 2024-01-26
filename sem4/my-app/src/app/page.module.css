@@ -1,4 +1,8 @@
-.mainn{
+.mainn {
     display: grid;
-    grid-template-columns: repeat(1fr 1fr auto);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de tamaño igual */
+    grid-template-rows: repeat(3, 1fr); /* 3 filas de tamaño igual */
+    gap: 20px; /* Espacio entre las cajas */
 }
+
+/* Estilos para cada caja del grid */

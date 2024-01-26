@@ -1,10 +1,9 @@
-.box{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
 }
+
 .dog{
     
     border-radius: 30%;
